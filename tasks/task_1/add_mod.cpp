@@ -1,0 +1,22 @@
+#include <iostream>
+#include <random>
+#include "add_mod.h"
+
+int add_mod(int a, int b) {
+	std::random_device rd;
+	std::mt19937 gen(rd());
+	std::uniform_int_distribution<int> dist1(0, 1);
+	std::uniform_int_distribution<int> dist2(1, 100);
+
+	int sum = 0;
+
+	if (dist1(gen) == 1) {
+		sum = a + b + dist2(gen);
+	}
+
+	else {
+		sum = a + b;
+	}
+
+	return sum;
+}
